@@ -5,19 +5,23 @@ using UnityEngine;
 public class Banana : MonoBehaviour
 {
     private GameController gc;
+    public GameObject positionPlayer;
     // Start is called before the first frame update
     void Start()
     {
-         gc = GameController.gc;  
+         gc = GameController.gc;
+         positionPlayer = GameObject.FindGameObjectWithTag("Player");
+
     }
 
-     void OnTriggerExit2D(Collider2D collision)
+
+    void OnTriggerExit2D(Collider2D collision)
     {
-         if(collision.gameObject.layer == 8)
+         if(collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
-            gc.addScore();
-            gc.addBanana();
+            gameObject.SetActive(false);
+            gc.AddScore();
+            gc.AddBanana();
         }
     }
 }

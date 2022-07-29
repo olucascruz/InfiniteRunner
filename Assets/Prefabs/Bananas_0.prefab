@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 599829846}
   m_Layer: 8
   m_Name: Bananas_0
-  m_TagString: Untagged
+  m_TagString: Banana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d14b20fb81363242b695c757786483c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionPlayer: {fileID: 0}
 --- !u!58 &599829846
 CircleCollider2D:
   m_ObjectHideFlags: 0

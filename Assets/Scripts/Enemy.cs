@@ -8,43 +8,54 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     private GameController gc;
-    // Start is called before the first frame update
+    private Vector2 initialLocal;
+    public float distance;
+    public Transform point1;
+    public Transform detectorEnemy;
+    public LayerMask layer;
+    public bool detectPlayer;
+
+    
     void Start()
     {
          rb = this.GetComponent<Rigidbody2D>();
-         gc = GameController.gc; 
+         gc = GameController.gc;
+         initialLocal = transform.position;
+
     }
 
-    // Update is called once per frame
+    void Update(){
+        detectPlayer = Physics2D.Linecast(point1.position, detectorEnemy.position, layer);
+    }
+
     void FixedUpdate()
     {
-        move();
+        
+        Move();
+        
     }
 
-    void move(){
-        float mH = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+    void Move(){
+        if(detectPlayer){
+            rb.velocity = new Vector2(speed*(-1), rb.velocity.y);
+        }else{
+            rb.velocity = new Vector2(speed*(0.2f), rb.velocity.y);
+        }
     }
 
-    void dead(){
+    void Dead(){
         rb.AddForce(new Vector2(0f, 30f), ForceMode2D.Impulse);
     }
 
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 9 && Player.isBig)
+        if(collision.gameObject.tag == "Player" && Player.isBig)
         {
-            dead();
-            gc.addScore();
+            Dead();
+            gc.AddScore();
         }
 
     }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-           if(collision.gameObject.layer == 8)
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 }

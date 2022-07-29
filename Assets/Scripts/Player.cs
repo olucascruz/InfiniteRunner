@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float jumpForce;
     private Rigidbody2D rb;
     private Animator anim;
-    private bool isJumping;
+    public bool isJumping;
     private GameController gc;
     public static bool isBig = false;
     
@@ -25,11 +25,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        move();
+        Move();
         if(gc.qntBanana == 5){
             anim.SetBool("BigProta", true);
             isBig = true;
-            Invoke("returnNormal", 5f);
+            Invoke("ReturnNormal", 5f);
         }
     }
 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void move(){
+    void Move(){
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
@@ -49,19 +49,19 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if(collision.gameObject.layer == 8)
         {
             isJumping = false;
             anim.SetBool("jump", false);
         }
-        if(collision.gameObject.layer == 7 && !isBig)
+        if(collision.gameObject.tag == "Enemy"  && !isBig)
         {
              SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
     }
 
-    void returnNormal(){
+    void ReturnNormal(){
         anim.SetBool("BigProta", false);
         isBig = false;
     }
