@@ -853,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 8937575558296189165, guid: 8ccfc3ed60a316342950f2b3d9868c86,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8937575558296189165, guid: 8ccfc3ed60a316342950f2b3d9868c86,
         type: 3}
@@ -1247,7 +1247,7 @@ PrefabInstance:
     - target: {fileID: 8937575558296189165, guid: 8ccfc3ed60a316342950f2b3d9868c86,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8937575558296189165, guid: 8ccfc3ed60a316342950f2b3d9868c86,
         type: 3}
@@ -1724,7 +1724,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1479654837184180094, guid: b6f7a1625472cbd40b59dc4738790f32,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1968,6 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1019662506}
+  Enemy2: {fileID: 0}
   Banana: {fileID: 101192453}
   player: {fileID: 1401451758}
   floor: {fileID: 1806453360}
@@ -2001,6 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 196728240}
+  Enemy2: {fileID: 0}
   Banana: {fileID: 1733471296}
   player: {fileID: 1401451758}
   floor: {fileID: 714351486}
@@ -2182,7 +2184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066d62489c3eddd4c9cdb61f84937763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1401451758}
   scoreText: {fileID: 737376526}
   score: 0
   qntBananaText: {fileID: 2116254496}

@@ -135,7 +135,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6983985294365126113, guid: 0a68f3657217d3040a75fd288c9c080c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -233,3 +233,4 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 512
+  checkRadius: 1

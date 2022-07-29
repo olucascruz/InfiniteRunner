@@ -13,9 +13,10 @@ public class Enemy : MonoBehaviour
     public Transform point1;
     public Transform detectorEnemy;
     public LayerMask layer;
-    public bool detectPlayer;
+    private bool detectPlayer;
+    private bool isInChaseRange;
+    public float checkRadius;
 
-    
     void Start()
     {
          rb = this.GetComponent<Rigidbody2D>();
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Update(){
+        isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, layer);
         detectPlayer = Physics2D.Linecast(point1.position, detectorEnemy.position, layer);
     }
 
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Move(){
-        if(detectPlayer){
+        if(detectPlayer || isInChaseRange){
             rb.velocity = new Vector2(speed*(-1), rb.velocity.y);
         }else{
             rb.velocity = new Vector2(speed*(0.2f), rb.velocity.y);
