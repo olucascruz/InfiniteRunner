@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
@@ -14,12 +16,17 @@ public class Player : MonoBehaviour
     private GameController gc;
     public static bool isBig = false;
     
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = this.GetComponent<Animator>();
         gc = GameController.gc; 
+    }
+
+    void Update(){
+
     }
 
     // Update is called once per frame
@@ -33,13 +40,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void jump(){
+    public void Jump(){
+        
         if(!isJumping && !isBig){
             isJumping = true;
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
         }
     }
+
+    
 
     void Move(){
         rb.velocity = new Vector2(speed, rb.velocity.y);
