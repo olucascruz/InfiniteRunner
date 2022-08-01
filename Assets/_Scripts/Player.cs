@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     public float jumpForce;
     private Rigidbody2D rb;
     private Animator anim;
-    public bool isJumping;
+    private bool isOnFloor = true;
     private GameController gc;
     public static bool isBig = false;
+    public LayerMask layer;
+    public float distanceFloor = 1;
     
     
     // Start is called before the first frame update
@@ -26,13 +28,6 @@ public class Player : MonoBehaviour
     }
 
     void Update(){
-
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        Move();
         if(gc.qntBanana == 5){
             anim.SetBool("BigProta", true);
             isBig = true;
@@ -40,10 +35,18 @@ public class Player : MonoBehaviour
         }
     }
 
+   
+    void FixedUpdate()
+    {
+        Move();
+
+        isOnFloor = Physics2D.Raycast(transform.position, Vector2.down, distanceFloor, layer);
+        
+    }
+
     public void Jump(){
         
-        if(!isJumping && !isBig){
-            isJumping = true;
+        if(isOnFloor && !isBig){
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
         }
@@ -61,7 +64,6 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.layer == 8)
         {
-            isJumping = false;
             anim.SetBool("jump", false);
         }
         if(collision.gameObject.tag == "Enemy"  && !isBig)

@@ -13,9 +13,10 @@ public class GameController : MonoBehaviour
     public Image I_jumpForce;
     public Button JumpButton;
     private bool ButtonUpPress;
+    public LayerMask layer;
     
     // Update is called once per frame
-     void Awake()
+    void Awake()
     {   
         if(gc == null)
         {
@@ -68,14 +69,14 @@ public class GameController : MonoBehaviour
     }
 
     public void OnGUI(){
-
+        Event m_Event = Event.current;
         
-        if (Event.current.type == EventType.MouseDown)
+        if (m_Event.type == EventType.MouseDown)
         {
             ButtonUpPress = true;
         }
 
-        if (Event.current.type == EventType.MouseUp)
+        if (m_Event.type == EventType.MouseUp)
         {
            ButtonUpPress = false;
         }

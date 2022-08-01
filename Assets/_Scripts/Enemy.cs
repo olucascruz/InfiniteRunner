@@ -25,14 +25,11 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Update(){
-        isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, layer);
-        detectPlayer = Physics2D.Linecast(point1.position, detectorEnemy.position, layer);
-    }
 
     void FixedUpdate()
     {
-        
+        isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, layer);
+        detectPlayer = Physics2D.Linecast(point1.position, detectorEnemy.position, layer);
         Move();
         
     }
