@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
     public Image I_jumpForce;
     public Button JumpButton;
     private bool ButtonUpPress;
-    public LayerMask layer;
+    public JumpForce F_jumpForce;
+    private bool add_jumpForce = true;
     
     // Update is called once per frame
     void Awake()
@@ -29,19 +30,30 @@ public class GameController : MonoBehaviour
     }
 
     void Start(){
+        F_jumpForce.value = 0;
         I_jumpForce.fillAmount = 0;
         JumpButton.onClick.AddListener(OnGUI);
     }
     
     void Update()
     {
+
+        I_jumpForce.fillAmount = F_jumpForce.value;
+        if(F_jumpForce.value > 1){
+            add_jumpForce = false;
+        }
+        else if(F_jumpForce.value < 0){
+            add_jumpForce = true;
+        }
         if(ButtonUpPress){
-            I_jumpForce.fillAmount = I_jumpForce.fillAmount + 0.01f;
-            if(I_jumpForce.fillAmount == 1){
-                I_jumpForce.fillAmount = 0;
-            }   
+            if(add_jumpForce){
+            F_jumpForce.value = F_jumpForce.value + 0.01f;
+            }
+            else{
+                F_jumpForce.value = F_jumpForce.value - 0.01f;
+            }    
         }else{
-            I_jumpForce.fillAmount = 0;
+            F_jumpForce.value = 0;
         }
         RefreshScreen();
         

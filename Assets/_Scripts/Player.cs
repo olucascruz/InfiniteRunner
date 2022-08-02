@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 {
    
     public float speed;
-    public float jumpForce;
+    public JumpForce jumpForce;
     private Rigidbody2D rb;
     private Animator anim;
     private bool isOnFloor = true;
@@ -45,9 +45,9 @@ public class Player : MonoBehaviour
     }
 
     public void Jump(){
-        
-        if(isOnFloor && !isBig){
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        float jump = jumpForce.value * 4f;
+        if(isOnFloor && !isBig && jump > 1f){
+            rb.AddForce(new Vector2(0f, jump), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
         }
     }
