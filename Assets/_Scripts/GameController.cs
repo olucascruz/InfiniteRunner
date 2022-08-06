@@ -47,17 +47,17 @@ public class GameController : MonoBehaviour
         }
         if(ButtonUpPress){
             if(add_jumpForce){
-            F_jumpForce.value = F_jumpForce.value + 0.01f;
+            F_jumpForce.value = F_jumpForce.value + 0.02f;
             }
             else{
-                F_jumpForce.value = F_jumpForce.value - 0.01f;
+                F_jumpForce.value = F_jumpForce.value - 0.02f;
             }    
         }else{
             F_jumpForce.value = 0;
         }
         RefreshScreen();
         
-        if(qntBanana == 5 && !Player.isBig){
+        if(qntBanana == 5 && Player.isBig){
             Invoke("Zered", 0.2f);
         }
     }

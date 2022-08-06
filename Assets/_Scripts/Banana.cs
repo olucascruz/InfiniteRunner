@@ -22,6 +22,11 @@ public class Banana : MonoBehaviour
             gameObject.SetActive(false);
             gc.AddScore();
             gc.AddBanana();
+            Invoke("ReturnBanana", 2f);
         }
+    }
+
+    void ReturnBanana(){
+        gameObject.SetActive(true);
     }
 }
