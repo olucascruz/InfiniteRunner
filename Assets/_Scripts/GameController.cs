@@ -40,7 +40,8 @@ public class GameController : MonoBehaviour
 
         I_jumpForce.fillAmount = F_jumpForce.value;
         if(F_jumpForce.value > 1){
-            add_jumpForce = false;
+            F_jumpForce.value = 1;
+            Invoke("DownJumpBar", 0.2f);
         }
         else if(F_jumpForce.value < 0){
             add_jumpForce = true;
@@ -60,6 +61,10 @@ public class GameController : MonoBehaviour
         if(qntBanana == 5 && Player.isBig){
             Invoke("Zered", 0.2f);
         }
+    }
+
+    void DownJumpBar(){
+        add_jumpForce = false;
     }
 
     void Zered(){
