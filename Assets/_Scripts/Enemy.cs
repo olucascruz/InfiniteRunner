@@ -9,9 +9,6 @@ public class Enemy : MonoBehaviour
     public float speed;
     private GameController gc;
     private Vector2 initialLocal;
-    public float distance;
-    public Transform point1;
-    public Transform detectorEnemy;
     public LayerMask layer;
     private bool detectPlayer;
     private bool isInChaseRange;
@@ -29,13 +26,12 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, layer);
-        detectPlayer = Physics2D.Linecast(point1.position, detectorEnemy.position, layer);
         Move();
         
     }
 
     void Move(){
-        if(detectPlayer || isInChaseRange){
+        if(isInChaseRange){
             rb.velocity = new Vector2(speed*(-1), rb.velocity.y);
         }else{
             rb.velocity = new Vector2(speed*(0.2f), rb.velocity.y);
