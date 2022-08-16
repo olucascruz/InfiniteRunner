@@ -31,11 +31,8 @@ public class Enemy : MonoBehaviour
     }
 
     void Move(){
-        if(isInChaseRange){
-            rb.velocity = new Vector2(speed*(-1), rb.velocity.y);
-        }else{
-            rb.velocity = new Vector2(speed*(0.2f), rb.velocity.y);
-        }
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+       
     }
 
     void Dead(){

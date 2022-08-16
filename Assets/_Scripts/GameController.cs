@@ -87,6 +87,8 @@ public class GameController : MonoBehaviour
 
     public void OnGUI(){
         Event m_Event = Event.current;
+        Debug.Log(m_Event);
+        print(m_Event);
         
         if (m_Event.type == EventType.MouseDown)
         {
