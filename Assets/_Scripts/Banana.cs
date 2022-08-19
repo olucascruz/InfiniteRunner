@@ -20,7 +20,6 @@ public class Banana : MonoBehaviour
          if(collision.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
-            gc.AddScore();
             gc.AddBanana();
             Invoke("ReturnBanana", 2f);
         }

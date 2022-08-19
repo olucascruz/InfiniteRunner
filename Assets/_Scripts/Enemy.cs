@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Player" && Player.isBig)
         {
             Dead();
-            gc.AddScore();
         }
 
     }

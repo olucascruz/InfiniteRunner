@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public Text scoreText;
-    public int score = 0;
+    public float multiplyScore;
+    private float score = 0;
     public Text qntBananaText;
     public int qntBanana = 0;
     public static GameController gc;
@@ -37,7 +38,7 @@ public class GameController : MonoBehaviour
     
     void Update()
     {
-
+        SetScore(Time.deltaTime * multiplyScore);
         I_jumpForce.fillAmount = F_jumpForce.value;
         if(F_jumpForce.value > 1){
             F_jumpForce.value = 1;
@@ -74,12 +75,12 @@ public class GameController : MonoBehaviour
 
     public void RefreshScreen()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = $"Score: {Mathf.FloorToInt(score)}";
         qntBananaText.text = qntBanana.ToString();
     }
 
-    public void AddScore(){
-        score = score + 5;
+    public void SetScore(float _score){
+        this.score += _score;
     }
     public void AddBanana(){
         qntBanana++;
@@ -88,7 +89,7 @@ public class GameController : MonoBehaviour
     public void OnGUI(){
         Event m_Event = Event.current;
         Debug.Log(m_Event);
-        print(m_Event);
+        
         
         if (m_Event.type == EventType.MouseDown)
         {
