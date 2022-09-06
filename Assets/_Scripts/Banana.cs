@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Banana : MonoBehaviour
-{
+{ 
+    [SerializeField]
+    private GameObject positionPlayer;
     private GameController gc;
-    public GameObject positionPlayer;
+
+
     // Start is called before the first frame update
     void Start()
     {

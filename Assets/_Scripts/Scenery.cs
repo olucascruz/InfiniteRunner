@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Scenery : MonoBehaviour
 {   
-    public GameObject Banana;
-    public Transform player;
-    public GameObject floor;
+    [SerializeField]
+    private GameObject Banana;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private GameObject floor;
+
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         moveScenery();
         if (transform.position.x < -10){

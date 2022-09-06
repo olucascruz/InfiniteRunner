@@ -5,19 +5,27 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public Text scoreText;
-    public float multiplyScore;
-    private float score = 0;
-    public Text qntBananaText;
-    public int qntBanana = 0;
-    public static GameController gc;
-    public Image I_jumpForce;
-    public Button JumpButton;
-    private bool ButtonUpPress;
-    public JumpForce F_jumpForce;
-    private bool add_jumpForce = true;
     
-    // Update is called once per frame
+    [SerializeField]
+    private Text scoreText;
+    [SerializeField]
+    private float multiplyScore;
+    private float score = 0;
+    [SerializeField]
+    private Text qntBananaText;
+    [SerializeField]
+    private Image I_jumpForce;
+    [SerializeField]
+    private Button JumpButton;
+    [SerializeField]
+    private JumpForce F_jumpForce;
+    [SerializeField]
+    private int qntBanana = 0;
+    private bool ButtonUpPress;
+    private bool add_jumpForce = true;
+    public static GameController gc;
+
+    
     void Awake()
     {   
         if(gc == null)
@@ -64,9 +72,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+
     void DownJumpBar(){
         add_jumpForce = false;
     }
+
 
     void Zered(){
         qntBanana = 0;
@@ -79,12 +89,16 @@ public class GameController : MonoBehaviour
         qntBananaText.text = qntBanana.ToString();
     }
 
+
     public void SetScore(float _score){
         this.score += _score;
     }
+
+
     public void AddBanana(){
         qntBanana++;
     }
+
 
     public void OnGUI(){
         Event m_Event = Event.current;
@@ -101,6 +115,10 @@ public class GameController : MonoBehaviour
            ButtonUpPress = false;
         }
 
+    }
+
+    public int GetQntBanana(){
+        return qntBanana;
     }
 
 }

@@ -7,17 +7,19 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-   
-    public float speed;
-    public JumpForce jumpForce;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private JumpForce jumpForce;
+    [SerializeField]
+    private LayerMask layer;
     private Rigidbody2D rb;
     private Animator anim;
     private bool isOnFloor = true;
-    private GameController gc;
     public static bool isBig = false;
-    public LayerMask layer;
     public float distanceFloor = 1;
-    
+    private GameController gc;
+
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
     }
 
     void Update(){
-        if(gc.qntBanana == 5){
+        if(gc.GetQntBanana() == 5){
             anim.SetBool("BigProta", true);
             isBig = true;
             Invoke("ReturnNormal", 5f);
@@ -53,11 +55,9 @@ public class Player : MonoBehaviour
     }
 
     
-
     void Move(){
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
-
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
         }
         
     }
+
 
     void ReturnNormal(){
         anim.SetBool("BigProta", false);

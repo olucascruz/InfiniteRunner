@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GeradorRobot : MonoBehaviour
 {   
-    public GameObject[] robotPrefabs;
-    public float delayInitial;
-    public float delayBetweenRobots;
+    [SerializeField]
+    private GameObject[] robotPrefabs;
+    [SerializeField]
+    private float delayInitial;
+    [SerializeField]
+    private float delayBetweenRobots;
     
 
     private void Start()

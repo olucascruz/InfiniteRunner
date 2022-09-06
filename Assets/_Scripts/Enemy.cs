@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    private Rigidbody2D rb;
-    public float speed;
-    private GameController gc;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private LayerMask layer;
+    [SerializeField]
+    private float checkRadius;
     private Vector2 initialLocal;
-    public LayerMask layer;
-    private bool detectPlayer;
+    private Rigidbody2D rb;
     private bool isInChaseRange;
-    public float checkRadius;
+    private GameController gc;
+
 
     void Start()
     {
@@ -30,10 +32,12 @@ public class Enemy : MonoBehaviour
         
     }
 
+
     void Move(){
             rb.velocity = new Vector2(speed, rb.velocity.y);
        
     }
+
 
     void Dead(){
         rb.AddForce(new Vector2(0f, 30f), ForceMode2D.Impulse);
