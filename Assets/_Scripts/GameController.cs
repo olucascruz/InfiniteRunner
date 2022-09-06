@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour
     void Start(){
         F_jumpForce.value = 0;
         I_jumpForce.fillAmount = 0;
-        JumpButton.onClick.AddListener(OnGUI);
     }
     
     void Update()
@@ -100,22 +99,10 @@ public class GameController : MonoBehaviour
     }
 
 
-    public void OnGUI(){
-        Event m_Event = Event.current;
-        Debug.Log(m_Event);
-        
-        
-        if (m_Event.type == EventType.MouseDown)
-        {
-            ButtonUpPress = true;
-        }
-
-        if (m_Event.type == EventType.MouseUp)
-        {
-           ButtonUpPress = false;
-        }
-
+    public void SetButtonUpPress(bool _b){
+        ButtonUpPress = _b;
     }
+
 
     public int GetQntBanana(){
         return qntBanana;
