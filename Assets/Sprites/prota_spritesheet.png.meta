@@ -23,8 +23,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -56,12 +54,9 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -1775,85 +1770,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      prota_spritesheet_36: 1192934005
-      prota_spritesheet_28: 868901868
-      prota_spritesheet_42: 1761140176
-      prota_spritesheet_57: -810384908
-      prota_spritesheet_7: 404356615
-      prota_spritesheet_16: 1698663842
-      prota_walking_5: 1056416314
-      prota_walking_2: -1834429376
-      prota_spritesheet_19: -1347644221
-      prota_spritesheet_48: -219555811
-      prota_spritesheet_56: -1445058802
-      prota_spritesheet_72: -1607220938
-      prota_spritesheet_21: -1675865844
-      prota_spritesheet_55: 751112428
-      prota_jump_2: -809242285
-      prota_spritesheet_70: -793167290
-      prota_spritesheet_14: 2029037556
-      prota_spritesheet_37: -660906802
-      prota_spritesheet_38: -1539560398
-      prota_spritesheet_51: 1653425603
-      prota_spritesheet_49: -338780081
-      prota_spritesheet_54: -2026324721
-      prota_spritesheet_67: -1422107013
-      prota_spritesheet_11: 1698044916
-      prota_jump_1: -405050117
-      prota_spritesheet_75: -667793526
-      prota_spritesheet_62: -1510760387
-      prota_spritesheet_76: -266692731
-      prota_spritesheet_29: -919216399
-      prota_spritesheet_58: 1195698157
-      prota_walking_0: -1573879242
-      prota_spritesheet_17: -744536683
-      prota_spritesheet_44: 1522450667
-      prota_spritesheet_13: 402189827
-      prota_spritesheet_20: 605735108
-      prota_spritesheet_64: 590559272
-      prota_spritesheet_45: -470409390
-      prota_spritesheet_22: -1470776855
-      prota_spritesheet_60: 1682133337
-      prota_spritesheet_77: -1965293729
-      prota_spritesheet_8: 1975415291
-      prota_spritesheet_10: -954068695
-      prota_walking_1: -452527050
-      prota_spritesheet_39: 2048128370
-      prota_spritesheet_27: 695105304
-      prota_walkink_3: -1197895151
-      prota_spritesheet_30: 2077029639
-      prota_spritesheet_59: -1883603049
-      prota_spritesheet_69: 897869058
-      prota_spritesheet_43: -546297383
-      prota_spritesheet_6: -92206661
-      prota_spritesheet_66: 1858515611
-      prota_spritesheet_23: 1534145493
-      prota_spritesheet_61: -348358153
-      prota_spritesheet_63: 1634822893
-      prota_walking_4: -776005901
-      prota_spritesheet_26: 2135674829
-      prota_spritesheet_9: -545465184
-      prota_spritesheet_71: -196863868
-      prota_spritesheet_74: 59408945
-      prota_spritesheet_25: -1808937447
-      prota_spritesheet_31: 705950495
-      prota_spritesheet_34: -2017321553
-      prota_spritesheet_65: 411880508
-      prota_spritesheet_24: 689583510
-      prota_spritesheet_68: 1969333977
-      prota_spritesheet_12: 889536410
-      prota_spritesheet_40: -1373759636
-      prota_spritesheet_53: -488919573
-      prota_spritesheet_50: -1353691599
-      prota_spritesheet_52: 679456531
-      prota_spritesheet_15: 1799612034
-      prota_spritesheet_32: -1550630768
-      prota_spritesheet_41: -95973755
-      prota_spritesheet_18: 186824663
-      prota_spritesheet_35: 1624702271
-      prota_spritesheet_33: 364224812
-      prota_spritesheet_73: 153782040
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
