@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     private JumpForce jumpForce;
     [SerializeField]
     private LayerMask layer;
+    [SerializeField]
+    private GameObject colliderStanding;
+    [SerializeField]
+    private GameObject colliderLowered;
+    private bool playerLowered = false;
     private Rigidbody2D rb;
     private Animator anim;
     private bool isOnFloor = true;
@@ -35,6 +40,16 @@ public class Player : MonoBehaviour
             isBig = true;
             Invoke("ReturnNormal", 5f);
         }
+
+        if(playerLowered){
+            anim.SetBool("protaDown", true);
+            colliderLowered.SetActive(true);
+            colliderStanding.SetActive(false);
+        }else{
+            anim.SetBool("protaDown", false);
+            colliderStanding.SetActive(true);
+            colliderLowered.SetActive(false);
+        }
     }
 
    
@@ -43,7 +58,17 @@ public class Player : MonoBehaviour
         Move();
 
         isOnFloor = Physics2D.Raycast(transform.position, Vector2.down, distanceFloor, layer);
+
         
+        
+    }
+
+    public void Down(){
+        playerLowered = true;
+    }
+
+    public void Up(){
+        playerLowered = false;
     }
 
     public void Jump(){
